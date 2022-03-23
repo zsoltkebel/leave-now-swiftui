@@ -104,6 +104,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(stop: Stop(atcocode: "639002262", latitude: 0.0, longitude: 0.0, name: "", description: "", distance: 14), networkManager: NetworkManager())
+        DetailView(stop: Stop(atcocode: "639002262", latitude: 0.0, longitude: 0.0, accuracy: 0, name: "", description: "", distance: 14), networkManager: NetworkManager())
     }
 }

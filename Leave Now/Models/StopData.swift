@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Results: Decodable {
     let member: [Stop]
@@ -18,7 +19,12 @@ struct Stop: Decodable, Identifiable, Hashable {
     let atcocode: String
     let latitude: Double
     let longitude: Double
+    let accuracy: Int
     let name: String
     let description: String
     let distance: Int
+    
+    var location: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
