@@ -19,9 +19,14 @@ struct BusStopRow: View {
                 .onTapGesture {
                     MapManager.openMap(stop: stop)
                 }
-            Text(stop.name)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text(String(stop.distance))
+            VStack {
+                Text(stop.name)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.headline)
+                Text(stop.description)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.subheadline)
+            }
         }
     }
 }
@@ -29,8 +34,8 @@ struct BusStopRow: View {
 struct BusStopRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BusStopRow(stop: Stop(atcocode: "", latitude: 0.0, longitude: 0.0, accuracy: 0, name: "Music Hall (Stop C4) - SW-bound", description: "", distance: 14))
+            BusStopRow(stop: Stop(atcocode: "", latitude: 0.0, longitude: 0.0, accuracy: 0, name: "Music Hall (Stop C4) - SW-bound", description: "Aberdeen", distance: 14))
         }
-        .previewLayout(.fixed(width: 300, height: 70))
+        .previewLayout(.fixed(width: 300, height: 90))
     }
 }
