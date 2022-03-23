@@ -11,9 +11,9 @@ struct DepartureRow: View {
     let departure: Departure
     var live: Bool = false
     
-    @State var remainingMinutes: Int?
+    @State var trailingMessage: String?
     @State var timer: Timer?  // for updating the time remaining if live
-
+    
     var body: some View {
         HStack {
             Text(departure.line)
@@ -21,11 +21,11 @@ struct DepartureRow: View {
                 .background(Color(UIColor.systemGray5))
                 .cornerRadius(10)
             Text(departure.direction)
-            Text(departure.aimed_departure_time)
+            Text(departure.bestDepartureEstimate)
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                .opacity(remainingMinutes == nil ? 1 : 0.4)
-            if remainingMinutes != nil {
-                Text(remainingMinutes! > 1 ? "\(remainingMinutes!) mins" : "\(remainingMinutes!) min")
+                .opacity(trailingMessage == nil ? 1 : 0.4)
+            if trailingMessage != nil {
+                Text(trailingMessage!)
                     .onAppear {
                         startTimer()
                     }
@@ -33,34 +33,36 @@ struct DepartureRow: View {
         }
         .onAppear {
             if live {
-                remainingMinutes = departure.calculateMinutesTillDeparture()
+                updateMessage()
             }
         }
     }
     
     func startTimer() {
         timer?.invalidate()
+        // calculate delay till next full minute
         let interval = Double(Date().timeIntervalSinceReferenceDate)
         let delay = 60  - fmod(interval, 60.0)
-        //        message.text = "Delay = \(delay)"
         print("delay: \(delay)")
-        //Create a "one-off" timer that fires on the next even minute
+        //Create a "one-off" timer that fires on the next minute
         let _ = Timer.scheduledTimer(withTimeInterval: delay, repeats: false ) { timer in
-            //          self.message.text = "\(Date())"
             print("timer started")
-            remainingMinutes = departure.calculateMinutesTillDeparture()
-            
+            updateMessage()
             self.timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true ) { timer in
                 //Put your repeating code here.
                 print("update time remaining")
-                remainingMinutes = departure.calculateMinutesTillDeparture()
+                updateMessage()
             }
         }
+    }
+    
+    func updateMessage() {
+        trailingMessage = departure.displayMessage()
     }
 }
 
 struct DepartureRow_Previews: PreviewProvider {
     static var previews: some View {
-        DepartureRow(departure: Departure(line: "", lineName: "", direction: "", date: "", aimed_departure_time: "", expected_departure_time: ""))
+        DepartureRow(departure: Departure(line: "", lineName: "", direction: "", date: "", aimedDepartureTime: "", expectedDepartureTime: "", bestDepartureEstimate: ""))
     }
 }

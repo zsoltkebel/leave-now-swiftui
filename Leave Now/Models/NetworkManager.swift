@@ -68,7 +68,7 @@ class NetworkManager: ObservableObject {
                                 self.departures = results.departures.values.flatMap({ departures in
                                     departures
                                 }).sorted(by: { d1, d2 in
-                                    return d1.aimed_departure_time < d2.aimed_departure_time
+                                    return d1.bestDepartureEstimate < d2.bestDepartureEstimate
                                 })
                                 print("array comiung now")
                                 print(self.departures)
@@ -113,7 +113,7 @@ class NetworkManager: ObservableObject {
                     self.departures = results.departures.values.flatMap({ departures in
                         departures
                     }).sorted(by: { d1, d2 in
-                        return d1.aimed_departure_time < d2.aimed_departure_time
+                        return d1.bestDepartureEstimate < d2.bestDepartureEstimate
                     })
                 }
                 
