@@ -76,13 +76,6 @@ struct DetailView: View {
                                 Button(action: toggleFavorite) {
             Image(systemName: favorite ? "star.fill" : "star")
         })
-        .toolbar {
-            ToolbarItem {
-                Button(action: toggleFavorite) {
-                    Image(systemName: "favorites")
-                }
-            }
-        }
     }
     
     func toggleFavorite() {
