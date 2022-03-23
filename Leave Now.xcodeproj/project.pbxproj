@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0D0D1B27E6715A00AAE6C3 /* MapSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D0D1A27E6715A00AAE6C3 /* MapSnapshotView.swift */; };
 		AFC1321A27CD2F5000755BDD /* Leave_NowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */; };
 		AFC1321C27CD2F5000755BDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1321B27CD2F5000755BDD /* ContentView.swift */; };
 		AFC1321E27CD2F5200755BDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC1321D27CD2F5200755BDD /* Assets.xcassets */; };
@@ -14,6 +15,11 @@
 		AFC1322B27CD2F5300755BDD /* Leave_NowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1322A27CD2F5300755BDD /* Leave_NowTests.swift */; };
 		AFC1323527CD2F5300755BDD /* Leave_NowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1323427CD2F5300755BDD /* Leave_NowUITests.swift */; };
 		AFC1323727CD2F5300755BDD /* Leave_NowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1323627CD2F5300755BDD /* Leave_NowUITestsLaunchTests.swift */; };
+		AFC1324527CD3EDD00755BDD /* BusStopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1324427CD3EDD00755BDD /* BusStopRow.swift */; };
+		AFCE4B4F27E65DA800888DCE /* BusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE4B4E27E65DA800888DCE /* BusData.swift */; };
+		AFCE4B5127E6623500888DCE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE4B5027E6623500888DCE /* DetailView.swift */; };
+		AFF492EA27E640D300269EEF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF492E927E640D300269EEF /* NetworkManager.swift */; };
+		AFF492EC27E641EA00269EEF /* StopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF492EB27E641EA00269EEF /* StopData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0D0D1A27E6715A00AAE6C3 /* MapSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSnapshotView.swift; sourceTree = "<group>"; };
 		AFC1321627CD2F5000755BDD /* Leave Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_NowApp.swift; sourceTree = "<group>"; };
 		AFC1321B27CD2F5000755BDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +51,11 @@
 		AFC1323027CD2F5300755BDD /* Leave NowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Leave NowUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC1323427CD2F5300755BDD /* Leave_NowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_NowUITests.swift; sourceTree = "<group>"; };
 		AFC1323627CD2F5300755BDD /* Leave_NowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_NowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AFC1324427CD3EDD00755BDD /* BusStopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopRow.swift; sourceTree = "<group>"; };
+		AFCE4B4E27E65DA800888DCE /* BusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusData.swift; sourceTree = "<group>"; };
+		AFCE4B5027E6623500888DCE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AFF492E927E640D300269EEF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AFF492EB27E641EA00269EEF /* StopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +106,9 @@
 		AFC1321827CD2F5000755BDD /* Leave Now */ = {
 			isa = PBXGroup;
 			children = (
+				AFF492E827E640A900269EEF /* Models */,
+				AFC1324327CD3EA900755BDD /* Views */,
 				AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */,
-				AFC1321B27CD2F5000755BDD /* ContentView.swift */,
 				AFC1321D27CD2F5200755BDD /* Assets.xcassets */,
 				AFC1321F27CD2F5200755BDD /* Preview Content */,
 			);
@@ -125,6 +138,27 @@
 				AFC1323627CD2F5300755BDD /* Leave_NowUITestsLaunchTests.swift */,
 			);
 			path = "Leave NowUITests";
+			sourceTree = "<group>";
+		};
+		AFC1324327CD3EA900755BDD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFC1321B27CD2F5000755BDD /* ContentView.swift */,
+				AFC1324427CD3EDD00755BDD /* BusStopRow.swift */,
+				AFCE4B5027E6623500888DCE /* DetailView.swift */,
+				AF0D0D1A27E6715A00AAE6C3 /* MapSnapshotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFF492E827E640A900269EEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFF492E927E640D300269EEF /* NetworkManager.swift */,
+				AFF492EB27E641EA00269EEF /* StopData.swift */,
+				AFCE4B4E27E65DA800888DCE /* BusData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCE4B4F27E65DA800888DCE /* BusData.swift in Sources */,
+				AF0D0D1B27E6715A00AAE6C3 /* MapSnapshotView.swift in Sources */,
+				AFF492EC27E641EA00269EEF /* StopData.swift in Sources */,
+				AFF492EA27E640D300269EEF /* NetworkManager.swift in Sources */,
+				AFCE4B5127E6623500888DCE /* DetailView.swift in Sources */,
 				AFC1321C27CD2F5000755BDD /* ContentView.swift in Sources */,
+				AFC1324527CD3EDD00755BDD /* BusStopRow.swift in Sources */,
 				AFC1321A27CD2F5000755BDD /* Leave_NowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +462,7 @@
 				DEVELOPMENT_TEAM = BGYHUAQL5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +492,7 @@
 				DEVELOPMENT_TEAM = BGYHUAQL5U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
