@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF0D0D1B27E6715A00AAE6C3 /* MapSnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D0D1A27E6715A00AAE6C3 /* MapSnapshotView.swift */; };
 		AF652E6127EAB3620004ADAF /* DepartureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF652E6027EAB3620004ADAF /* DepartureRow.swift */; };
+		AF652E6327EAC2630004ADAF /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF652E6227EAC2630004ADAF /* keys.plist */; };
 		AFC1321A27CD2F5000755BDD /* Leave_NowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */; };
 		AFC1321C27CD2F5000755BDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC1321B27CD2F5000755BDD /* ContentView.swift */; };
 		AFC1321E27CD2F5200755BDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC1321D27CD2F5200755BDD /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		AF0D0D1A27E6715A00AAE6C3 /* MapSnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSnapshotView.swift; sourceTree = "<group>"; };
 		AF652E6027EAB3620004ADAF /* DepartureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureRow.swift; sourceTree = "<group>"; };
+		AF652E6227EAC2630004ADAF /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		AFC1321627CD2F5000755BDD /* Leave Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_NowApp.swift; sourceTree = "<group>"; };
 		AFC1321B27CD2F5000755BDD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				AFC1321927CD2F5000755BDD /* Leave_NowApp.swift */,
 				AFC1321D27CD2F5200755BDD /* Assets.xcassets */,
 				AFC1321F27CD2F5200755BDD /* Preview Content */,
+				AF652E6227EAC2630004ADAF /* keys.plist */,
 			);
 			path = "Leave Now";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				AFC1322127CD2F5200755BDD /* Preview Assets.xcassets in Resources */,
 				AFC1321E27CD2F5200755BDD /* Assets.xcassets in Resources */,
+				AF652E6327EAC2630004ADAF /* keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

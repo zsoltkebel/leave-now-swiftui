@@ -10,11 +10,22 @@ import CoreLocation
 
 class NetworkManager: ObservableObject {
     
-    let appId = "bd59b6b9"
-    let appKey = "b2db377299d9704e4bc2b08b85c73e2d"
+    let appId: String
+    let appKey: String
     
     @Published var stops = [Stop]()
     @Published var departures = [Departure]()
+    
+    init() {
+        if let path = Bundle.main.path(forResource: "keys", ofType: "plist") {
+            if let keys = NSDictionary(contentsOfFile: path) {
+                appId = keys["transportapi_app_id"] as! String
+                appKey = keys["transportapi_app_key"] as! String
+                return
+            }
+        }
+        fatalError("No app id and/or app key found for transportapi. Make sure to create keys.plist with those keys.")
+    }
     
     func fetchStopsData(lat: CLLocationDegrees, lon: CLLocationDegrees) {
         if let url = URL(string: "https://transportapi.com/v3/uk/places.json?lat=\(lat)&lon=\(lon)&type=bus_stop&app_id=\(appId)&app_key=\(appKey)") {
