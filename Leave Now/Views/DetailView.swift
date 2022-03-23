@@ -31,15 +31,7 @@ struct DetailView: View {
             Section(header: Text("Departures")) {
                 if (!networkManager.departures.isEmpty) {
                     ForEach(networkManager.departures) { departure in
-                        HStack {
-                            Text(departure.lineName)
-                                .padding(6)
-                                .background(Color(UIColor.systemGray5))
-                                .cornerRadius(10)
-                            Text(departure.direction)
-                            Text(departure.aimed_departure_time)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
+                        DepartureRow(departure: departure, live: departure.calculateMinutesTillDeparture()! <= 15)
                     }
                 } else {
                     ProgressView().progressViewStyle(CircularProgressViewStyle())

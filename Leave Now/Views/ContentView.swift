@@ -13,7 +13,7 @@ struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
     
     // atcocodes
-    var favorites: [String] {
+    var favoriteStops: [String] {
         return UserDefaults.standard.stringArray(forKey: "favorite_stops") ?? []
     }
     
@@ -29,11 +29,11 @@ struct ContentView: View {
                     else {
                         List {
                             if !networkManager.stops.filter({ stop in
-                                return self.favorites.contains(stop.atcocode)
+                                return self.favoriteStops.contains(stop.atcocode)
                             }).isEmpty {
                                 Section(header: Text("Favourites")) {
                                     ForEach(networkManager.stops.filter({ stop in
-                                        return self.favorites.contains(stop.atcocode)
+                                        return self.favoriteStops.contains(stop.atcocode)
                                     })) { stop in
                                         NavigationLink(destination: DetailView(stop: stop, favorite: true, networkManager: networkManager)) {
                                             BusStopRow(stop: stop)
@@ -45,7 +45,7 @@ struct ContentView: View {
                             
                             Section(header: Text("All")) {
                                 ForEach(networkManager.stops) { stop in
-                                    NavigationLink(destination: DetailView(stop: stop, favorite: self.favorites.contains(stop.atcocode), networkManager: networkManager)) {
+                                    NavigationLink(destination: DetailView(stop: stop, favorite: self.favoriteStops.contains(stop.atcocode), networkManager: networkManager)) {
                                         BusStopRow(stop: stop)
                                     }
                                 }

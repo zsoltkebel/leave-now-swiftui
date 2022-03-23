@@ -28,4 +28,15 @@ struct Departure: Codable, Identifiable, Hashable {
         case aimed_departure_time
         case expected_departure_time
     }
+    
+    func calculateMinutesTillDeparture() -> Int? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        guard let departureDate = dateFormatter.date(from: date + "T" + aimed_departure_time) else {
+            return nil
+        }
+        let currentDate = Date()
+        let distance = currentDate.distance(to: departureDate)
+        return Int((distance / 60.0).rounded())
+    }
 }
