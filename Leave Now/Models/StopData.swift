@@ -24,7 +24,11 @@ struct Stop: Decodable, Identifiable, Hashable {
     let description: String
     let distance: Int
     
-    var location: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    var location: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    var shortName: String? {
+        return name.components(separatedBy: " - ").first
     }
 }

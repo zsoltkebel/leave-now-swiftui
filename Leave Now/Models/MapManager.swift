@@ -16,7 +16,7 @@ struct MapManager {
         request.naturalLanguageQuery = "public transport"
         request.pointOfInterestFilter = MKPointOfInterestFilter(including: [.publicTransport])
         request.resultTypes = .pointOfInterest
-        request.region = MKCoordinateRegion(center: stop.location, latitudinalMeters: CLLocationDistance(stop.accuracy), longitudinalMeters: CLLocationDistance(stop.accuracy))
+        request.region = MKCoordinateRegion(center: stop.location.coordinate, latitudinalMeters: CLLocationDistance(stop.accuracy), longitudinalMeters: CLLocationDistance(stop.accuracy))
         
         let search = MKLocalSearch(request: request)
         search.start(completionHandler: completionHandler)

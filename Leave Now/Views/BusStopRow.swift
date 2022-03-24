@@ -20,7 +20,7 @@ struct BusStopRow: View {
                     MapManager.openMap(stop: stop)
                 }
             VStack {
-                Text(stop.name)
+                Text(stop.shortName ?? stop.name)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.headline)
                 Text(stop.description)
