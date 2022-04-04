@@ -14,4 +14,4 @@ To use this app you need to
  transportapi_app_key: <your app key>
  ```
 
-See [NetworkManager.swift](file://Leave%20Now/Models/NetworkManager.swift) for usage of these keys.
+See [NetworkManager.swift](Leave%20Now/Models/NetworkManager.swift) for usage of these keys.
